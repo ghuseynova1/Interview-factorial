@@ -5,7 +5,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import java.io.IOException;
 
 public class ReportUtils {
     ExtentHtmlReporter htmlReport;

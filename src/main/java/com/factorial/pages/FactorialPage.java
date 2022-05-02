@@ -1,6 +1,5 @@
 package com.factorial.pages;
 
-import commonLibs.implementation.ElementControl;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -36,16 +35,16 @@ public class FactorialPage extends BasePage{
     @FindBy(linkText = "Privacy")
     private WebElement privacyLink;
 
+    public WebElement getInputField() {
+        return inputField;
+    }
+
     public void calculateFactorial (String input){
-     //   String lastResult = elementControl.getElementText(resultField);
         String lastResult = resultField.getText();
-       // elementControl.clear(inputField);
         inputField.clear();
-        //elementControl.setText(inputField,input);
         inputField.sendKeys(input);
-      //  elementControl.clickElement(calculateButton);
         calculateButton.click();
-        waitForCondition(driver -> !resultField.getText().equals(lastResult));  //need optimate
+        waitForCondition(driver -> !resultField.getText().equals(lastResult));
     }
 
     public WebElement getResultField() {

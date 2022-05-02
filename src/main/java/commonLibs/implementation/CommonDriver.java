@@ -2,8 +2,8 @@ package commonLibs.implementation;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class CommonDriver {
@@ -21,7 +21,7 @@ public class CommonDriver {
 
         if(browserType.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver",
-                    currentWorkingDirectory + "/drivers/chromedriver.exe");
+                    currentWorkingDirectory + File.separator + "drivers" + File.separator + "chromedriver.exe");
             driver = new ChromeDriver();
         } else {
             throw new Exception("Invalid browser type "+ browserType);
@@ -40,14 +40,6 @@ public class CommonDriver {
 
     public WebDriver getDriver() {
         return driver;
-    }
-
-    public void setPageLoadTimeout(int pageLoadTimeout) {
-        this.pageLoadTimeout = pageLoadTimeout;
-    }
-
-    public void setElementDetectionTimeout(int elementDetectionTimeout) {
-        this.elementDetectionTimeout = elementDetectionTimeout;
     }
 
     public void closeAll() {

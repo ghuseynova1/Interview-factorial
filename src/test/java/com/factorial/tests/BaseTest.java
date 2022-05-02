@@ -33,8 +33,8 @@ public class BaseTest {
     public void preSetup() throws Exception {
         currentWorkingDirectory = System.getProperty("user.dir");
 
-        configFileName = currentWorkingDirectory + "/config/config.properties";
-        reportFileName = currentWorkingDirectory + "/reports/factorialTestReport.html";
+        configFileName = currentWorkingDirectory + File.separator + "config" + File.separator + "config.properties";
+        reportFileName = currentWorkingDirectory + File.separator + "reports" + File.separator + "factorialTestReport.html";
 
         configProperty = ConfigUtils.readProperties(configFileName);
 
@@ -63,16 +63,16 @@ public class BaseTest {
         long executeTime = System.currentTimeMillis();
         String screenshotFileName = testCaseName + executeTime + ".jpeg";
 
-        if(result.getStatus() == ITestResult.FAILURE) {
+        if (result.getStatus() == ITestResult.FAILURE) {
 
-            reportUtils.addTestLog(Status.FAIL,"One or more steps failed");
+            reportUtils.addTestLog(Status.FAIL, "One or more steps failed");
             screenshot.captureAndSaveScreenshot(currentWorkingDirectory +
                     File.separator +
                     "screenshots" +
                     File.separator + screenshotFileName);
-            reportUtils.attachScreenshotToReport( ".."+File.separator + "screenshots" + File.separator + screenshotFileName);
+            reportUtils.attachScreenshotToReport(".." + File.separator + "screenshots" + File.separator + screenshotFileName);
         }
-        if(!driver.getCurrentUrl().equals(url)){
+        if (!driver.getCurrentUrl().equals(url)) {
             cmnDriver.navigateToUrl(url);
         }
     }

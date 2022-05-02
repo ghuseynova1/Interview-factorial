@@ -6,7 +6,6 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.io.File;
 
 public class FactorialTest extends BaseTest {
     private static final String INVALID_INPUT_ERR_MESS = "Please enter an integer";
@@ -18,8 +17,9 @@ public class FactorialTest extends BaseTest {
         reportUtils.createATestCase("Verify page title with expected one");
         reportUtils.addTestLog(Status.INFO, "Performing of getting page title");
         String expectedTitle = "Factorial";
+        reportUtils.addTestLog(Status.INFO, String.format("Expected Title: %s", expectedTitle));
         String actualTitle = cmnDriver.getTitleOfThePage();
-
+        reportUtils.addTestLog(Status.INFO, String.format("Actual Title: %s", actualTitle));
         reportUtils.addTestLog(Status.INFO, "Comparing expected and actual title");
         Assert.assertEquals(actualTitle, expectedTitle);
     }
@@ -80,7 +80,6 @@ public class FactorialTest extends BaseTest {
             Assert.assertEquals(actualResult, NEGATIVE_INPUT_ERR_MESS);
         }
 
-
     }
 
     @Test
@@ -100,8 +99,8 @@ public class FactorialTest extends BaseTest {
     }
 
     @Test
-    public void verifyDirectionOfTermsAndConditionsLink() {
-        reportUtils.createATestCase("Verify Terms and Conditions link directed to the appropriate page");
+    public void verifyRedirectionOfTermsAndConditionsLink() {
+        reportUtils.createATestCase("Verify Terms and Conditions link redirected to the appropriate page");
 
         reportUtils.addTestLog(Status.INFO, "Click the link");
         String actualText = factorialPage.clickTermsAndConditionsLink().getPageBody();
@@ -112,8 +111,8 @@ public class FactorialTest extends BaseTest {
     }
 
     @Test
-    public void verifyDirectionOfPrivacyLink() {
-        reportUtils.createATestCase("Verify Privacy link directed to the appropriate page");
+    public void verifyRedirectionOfPrivacyLink() {
+        reportUtils.createATestCase("Verify Privacy link redirected to the appropriate page");
 
         reportUtils.addTestLog(Status.INFO, "Click the link");
         String actualText = factorialPage.clickPrivacyLink().getPageBody();
