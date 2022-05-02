@@ -1,6 +1,8 @@
-# Interview-factorial
+# Interview factorial
 
 - [Extent reports](https://ghuseynova1.github.io/Interview-factorial/reports/factorialTestReport.html)
+
+<img src="docs/bug_screenshots/extentreports.png" width="50%" height="50%">
 
 Test cases:
 - [Enter minus number](/docs/bug_report/1-Bug-Report.md).
