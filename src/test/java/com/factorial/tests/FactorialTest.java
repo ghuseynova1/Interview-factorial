@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 
 public class FactorialTest extends BaseTest {
+    
     private static final String INVALID_INPUT_ERR_MESS = "Please enter an integer";
     private static final String NEGATIVE_INPUT_ERR_MESS = "Please enter a number great than 0";
     private static final String STYLE_OF_ERR_MESS_FIELD = "color: rgb(255, 0, 0);";
