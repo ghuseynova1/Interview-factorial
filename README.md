@@ -1,5 +1,6 @@
 # Interview-factorial
 
+- [Extent reports](https://ghuseynova1.github.io/Interview-factorial/reports/factorialTestReport.html)
 
 Test cases:
 - [Enter minus number](/docs/bug_report/1-Bug-Report.md).
