@@ -34,4 +34,4 @@ jobs:
           test_type=${{inputs.env}}
         fi
         echo "Hello ${{ inputs.name }}"
-        echo "Helloaaaaa ${{ test_type }}"
+        echo $test_type
