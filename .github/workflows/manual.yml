@@ -27,7 +27,7 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Detox Run
-      id: salam
+      id: output1
       run: |
         if [[ ${{ github.event_name }} != 'workflow_dispatch' ]]; then
           test_type="TEST"
@@ -36,8 +36,9 @@ jobs:
         fi
         echo "Hello ${{ inputs.name }}"
         echo $test_type
-        echo "CONFIG=salamlar" >> $GITHUB_ENV
+        echo "CONFIG=salamlar" >> $$GITHUB_OUTPUT
     - name: Detox a
       run: |
+        echo ${{ steps.output1.outputs.CONFIG }}
         echo ${{ env.CONFIG }}
         
